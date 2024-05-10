@@ -1,0 +1,25 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id String @id @unique
+    profilePicture String?
+}
+
+// model shoppingList {
+//     id String @id @unique
+// 	products products[]
+// }
+
+// model products {
+// 	id String @id @unique
+// 	name String?
+// 	shipping_list_id String
+// 	shoppingList shoppingList @relation(fields: [shipping_list_id], references: [id]) 
+// }
