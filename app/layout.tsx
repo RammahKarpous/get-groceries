@@ -3,7 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import HamburgerMenu from "@/components/ui/Navigation/HamburgerMenu";
-import { ClerkProvider, SignedOut } from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
+import Navigation from "@/components/ui/Navigation/Navigation";
 
 const poppins = Poppins({
     weight: ["100", "300", "400", "700"],
@@ -38,6 +39,10 @@ export default function RootLayout({
                     </SignedOut>
 
                     {children}
+
+                    <SignedIn>
+                        <Navigation />
+                    </SignedIn>
                 </body>
             </html>
         </ClerkProvider>
