@@ -1,10 +1,10 @@
 import React from "react";
 import TextInput from "./elements/TextInput";
-import { updateUser } from "@/actions/update-user-in-clerk";
 import Button from "../Button";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import CameraIcon from "@/components/icons/CameraIcon";
+import { updateUser } from "@/actions/update-user-in-clerk";
 
 export default async function UpdateProfileForm() {
     const user = await currentUser()

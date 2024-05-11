@@ -7,7 +7,6 @@ import { revalidatePath } from "next/cache";
 export const updateUser = async (formData: FormData) => {
     const user = await currentUser()
 
-
     const params = {
         firstName: String(formData.get('first-name')),
         lastName: String(formData.get('last-name')),
