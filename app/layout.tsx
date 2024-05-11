@@ -3,7 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import HamburgerMenu from "@/components/ui/Navigation/HamburgerMenu";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
+import Navigation from "@/components/ui/Navigation/Navigation";
 
 const poppins = Poppins({
     weight: ["100", "300", "400", "700"],
@@ -24,18 +25,24 @@ export default function RootLayout({
         <ClerkProvider>
             <html lang="en">
                 <body className={`${poppins.className} bg-body`}>
-                    <div className="flex items-center justify-between p-5">
-                        <Image
-                            src="/logo.svg"
-                            width={50}
-                            height={50}
-                            alt="GetGroceries logo image"
-                        />
+                    <SignedOut>
+                        <div className="flex items-center justify-between p-5">
+                            <Image
+                                src="/logo.svg"
+                                width={50}
+                                height={50}
+                                alt="GetGroceries logo image"
+                            />
 
-                        <HamburgerMenu />
-                    </div>
+                            <HamburgerMenu />
+                        </div>
+                    </SignedOut>
 
                     {children}
+
+                    <SignedIn>
+                        <Navigation />
+                    </SignedIn>
                 </body>
             </html>
         </ClerkProvider>

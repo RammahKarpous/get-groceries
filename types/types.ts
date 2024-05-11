@@ -6,6 +6,7 @@ export type IconProps = {
     width?: number,
     height?: number,
     isActive?: boolean
+    classes?: string
 }
 
 export type ButtonProps = {
@@ -14,3 +15,7 @@ export type ButtonProps = {
 }
 
 export type RegisterFormProps = z.infer<typeof RegisterFormSchema>;
+
+export type User = {
+    id: string,
+}
