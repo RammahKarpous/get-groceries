@@ -17,7 +17,7 @@ export default function TextInput({ forAttr, label, type, value, ...rest }: Text
                 type={type} 
                 name={forAttr} 
                 id={forAttr}
-                value={value}
+                defaultValue={value}
                 className="border border-gray-light p-2 rounded-md w-full placeholder:text-sm"
                 {...rest} />
         </div>

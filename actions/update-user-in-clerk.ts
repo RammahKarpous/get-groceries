@@ -1,3 +1,5 @@
+"use server";
+
 import { route } from "@/lib/route";
 import { clerkClient, currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
@@ -14,7 +16,8 @@ export const updateUser = async (formData: FormData) => {
         }
     }
 
-    await clerkClient.users.updateUser(user?.id!, params)
+    const response = await clerkClient.users.updateUser(user?.id!, params)
 
+    console.log(response);
     revalidatePath(route.updateProfile)
 }
