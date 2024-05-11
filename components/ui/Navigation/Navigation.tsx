@@ -26,6 +26,7 @@ export default function Navigation() {
                     <li key={i}>
                         <Link href={link.route} className="flex flex-col gap-1 items-center">
                             {link.icon}
+
                             {pathname === link.route ? (
                                 <span className="w-1 h-1 rounded-full bg-orange"></span>
                             ) : null}

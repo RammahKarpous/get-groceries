@@ -1,7 +1,7 @@
 export const route = {
     // Auth
     profile: "/profile",
-    updateProfile: "/update-profile",
+    updateProfile: "/profile/update",
     settings: "/settings",
     
     // Guest
