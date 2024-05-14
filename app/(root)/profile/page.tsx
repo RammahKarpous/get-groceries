@@ -1,4 +1,4 @@
-import { checkIfUserIdExistsInDb } from "@/actions/check-if-user-id-exists";
+import { checkIfUserIdExistsInDb } from "@/actions/checkIfUserIdExistsInDb";
 import PenIcon from "@/components/icons/PenIcon";
 import Button from "@/components/ui/Button";
 import ContentWrapper from "@/components/ui/ContentWrapper";

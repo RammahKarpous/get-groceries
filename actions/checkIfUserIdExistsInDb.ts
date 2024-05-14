@@ -2,7 +2,7 @@
 
 import { currentUser } from "@clerk/nextjs/server";
 import prisma from "@/lib/db";
-import { addUserToDatabase } from "./add-user-to-db";
+import { addUserToDatabase } from "./addUserToDatabase";
 
 export const checkIfUserIdExistsInDb = async () => {
     const user = await currentUser();
