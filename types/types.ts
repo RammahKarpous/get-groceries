@@ -1,6 +1,3 @@
-import { RegisterFormSchema } from "@/validation/register-form"
-import { z } from "zod"
-
 export type IconProps = {
     color?: string,
     width?: number,
@@ -14,8 +11,6 @@ export type ButtonProps = {
     type: "primary" | "secondary",
 }
 
-export type RegisterFormProps = z.infer<typeof RegisterFormSchema>;
-
 export type User = {
-    id: string,
+    clerkUId: string,
 }

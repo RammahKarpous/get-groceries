@@ -1,11 +1,11 @@
 import React from "react";
 
 type TextInputProps = {
-    forAttr?: string;
-    label?: string;
+    forAttr: string;
+    label: string;
     placeholder?: string,
     type: string,
-    value: string
+    value?: string
 };
 
 export default function TextInput({ forAttr, label, type, value, ...rest }: TextInputProps) {
@@ -18,6 +18,7 @@ export default function TextInput({ forAttr, label, type, value, ...rest }: Text
                 name={forAttr} 
                 id={forAttr}
                 defaultValue={value}
+                autoComplete="false"
                 className="border border-gray-light p-2 rounded-md w-full placeholder:text-sm"
                 {...rest} />
         </div>

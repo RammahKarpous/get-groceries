@@ -3,6 +3,13 @@ export const route = {
     profile: "/profile",
     updateProfile: "/profile/update",
     settings: "/settings",
+
+    // member groups
+    createGroup: "/group/create",
+
+    // Shopping lists
+    shoppingLists: "/shopping-lists",
+    createShoppingList: "/shopping-lists/create",
     
     // Guest
     home: "/",

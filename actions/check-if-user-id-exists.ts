@@ -1,3 +1,5 @@
+"use server";
+
 import { currentUser } from "@clerk/nextjs/server";
 import prisma from "@/lib/db";
 import { addUserToDatabase } from "./add-user-to-db";
@@ -7,12 +9,12 @@ export const checkIfUserIdExistsInDb = async () => {
     const users = await prisma.user.findMany();
 
     const createUser = {
-        id: user?.id!,
+        clerkUId: user?.id!,
     }
 
-    if ( users.length !== 0 ) {
+    if ( users.length >= 0 ) {
         users.map(puser => {
-            if ( user?.id === puser.id) { return false }
+            if ( user?.id === puser.clerkUId) { return false }
             else { addUserToDatabase(createUser) }
         })
     } else {
