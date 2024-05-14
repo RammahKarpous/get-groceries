@@ -10,8 +10,8 @@ export default async function UpdateProfileForm() {
     const user = await currentUser()
 
     return (
-        <form action={updateUser} className="mx-4 flex flex-col gap-3 items-start">
-            <div className="h-24 w-24 mx-auto my-6 bg-gray-200 rounded-full relative">
+        <form action={updateUser} className="flex flex-col gap-3 items-start">
+            <div className="h-24 w-24 mx-auto mb-2 mt-10 bg-gray-200 rounded-full relative">
                 <Image src={user?.imageUrl!} width={96} height={96} alt={`${user?.firstName!}'s profile picture`} className="rounded-full" />
                 <input type="file" name="profile-picture" id="profile-picture" className="hidden" />
 
