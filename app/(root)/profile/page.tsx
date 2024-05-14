@@ -31,8 +31,8 @@ export default async function Profile() {
             </div>
 
             <div className="flex justify-between items-center mt-5">
-                <p>Member groups</p>
-                <Link href={route.createGroup}><Button type="primary" text="Add a group" /></Link> 
+                <h3 className="font-bold">Member groups</h3>
+                <Link href={route.createGroup}><Button type="primary" text="Add a group" /></Link>
             </div>
         </ContentWrapper>
     );

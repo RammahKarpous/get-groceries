@@ -3,6 +3,7 @@
 import { route } from "@/lib/route";
 import { clerkClient, currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export const updateUser = async (formData: FormData) => {
     const user = await currentUser()
@@ -15,8 +16,8 @@ export const updateUser = async (formData: FormData) => {
         }
     }
 
-    const response = await clerkClient.users.updateUser(user?.id!, params)
+    await clerkClient.users.updateUser(user?.id!, params)
 
-    console.log(response);
-    revalidatePath(route.updateProfile)
+    revalidatePath(route.updateProfile);
+    redirect(route.profile);
 }
