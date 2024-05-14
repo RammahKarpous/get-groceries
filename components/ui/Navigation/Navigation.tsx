@@ -21,11 +21,11 @@ export default function Navigation() {
     ]
 
     return (
-        <nav className="bg-black py-2 fixed bottom-0 w-full">
-            <ul className="flex justify-around items-center max-w-screen-sm mx-auto">
+        <nav className="bg-black fixed bottom-0 w-full">
+            <ul className="max-w-screen-sm mx-auto">
                 {links.map( (link, i) => (
-                    <li key={i}>
-                        <Link href={link.route} className="flex flex-col gap-1 items-center">
+                    <li key={i} className="inline-block h-full w-1/4">
+                        <Link href={link.route} className={`flex flex-col gap-1 items-center justify-center w-full ${currentRouteIs(pathname, link.route) ? 'py-2' : "py-4"}`}>
                             {link.icon}
 
                             {currentRouteIs(pathname, link.route) ? (
