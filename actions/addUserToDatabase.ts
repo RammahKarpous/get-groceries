@@ -4,9 +4,15 @@ import prisma from "@/lib/db"
 import { User } from "@/types/types"
 
 export const addUserToDatabase = async (user: User) => {
-    await prisma.user.create({
-        data: { 
-            clerkUId: user.clerkUId
-        }
-    })
+    try {
+        await prisma.user.create({
+            data: { 
+                user_id: user.user_id
+            }
+        })
+    } catch (error) {
+        console.log(error)
+    }
+
+    
 }

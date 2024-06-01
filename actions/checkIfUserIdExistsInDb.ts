@@ -9,13 +9,18 @@ export const checkIfUserIdExistsInDb = async () => {
     const users = await prisma.user.findMany();
 
     const createUser = {
-        clerkUId: user?.id!,
+        user_id: user?.id!,
     }
 
-    if ( users.length >= 0 ) {
-        users.map(puser => {
-            if ( user?.id === puser.clerkUId) { return false }
-            else { addUserToDatabase(createUser) }
+
+    if ( users.length >= 1 ) {
+        users.map(userInPrisma => {
+            if ( user?.id === userInPrisma?.user_id) {
+                return false 
+            }
+            else { 
+                addUserToDatabase(createUser) 
+            }
         })
     } else {
         addUserToDatabase(createUser)
@@ -23,3 +28,5 @@ export const checkIfUserIdExistsInDb = async () => {
 
     return users;
 };
+
+// griftdijk12

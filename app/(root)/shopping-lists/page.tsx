@@ -11,7 +11,7 @@ const getShoppingLists = async () => {
 
     return await prisma.shoppingList.findMany({
         where: {
-            clerkUid: user?.id,
+            user_id: user?.id,
         },
     });
 };

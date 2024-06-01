@@ -9,13 +9,12 @@ datasource db {
 
 model User {
     id Int @id @default(autoincrement())
-    clerkUId String @unique
+    user_id String @unique
     shoppingList ShoppingListOnUser[]
 }
 
 model ShoppingList {
     id Int @id @default(autoincrement())
-    clerkUid String
     name String
     slug String
 	products products[]

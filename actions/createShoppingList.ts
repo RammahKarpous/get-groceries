@@ -12,7 +12,7 @@ export const createShoppingList = async (formData: FormData) => {
     
     await prisma.shoppingList.create({
         data: {
-            clerkUid: user?.id!,
+            user_id: user?.id!,
             name: String(formData.get('list-name')),
             slug: slugify(String(formData.get('list-name')))
         }

@@ -12,5 +12,5 @@ export type ButtonProps = {
 }
 
 export type User = {
-    clerkUId: string,
+    user_id: string,
 }
