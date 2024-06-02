@@ -14,3 +14,11 @@ export type ButtonProps = {
 export type User = {
     user_id: string,
 }
+
+export type TextInputProps = {
+    forAttr?: string;
+    label?: string;
+    placeholder?: string,
+    type: string,
+    value?: string
+};

@@ -1,19 +1,25 @@
+import { getUserFromPrisma } from "@/actions/getUserFromPrisma";
 import ContentWrapper from "@/components/ui/ContentWrapper";
 import PlusButton from "@/components/ui/PlusButton";
 import prisma from "@/lib/db";
 import { route } from "@/lib/route";
-import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import React from "react";
 
 const getShoppingLists = async () => {
-    const user = await currentUser();
+    const user = await getUserFromPrisma();
 
     return await prisma.shoppingList.findMany({
         where: {
-            user_id: user?.id,
-        },
-    });
+            users: {
+                every: {
+                    user: {
+                        id: user?.id
+                    }
+                }
+            }
+        }
+    })
 };
 
 export default async function ShoppingLists() {
