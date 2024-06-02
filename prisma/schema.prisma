@@ -8,33 +8,35 @@ datasource db {
 }
 
 model User {
-    id Int @id @default(autoincrement())
-    user_id String @unique
-    shoppingList ShoppingListOnUser[]
+    id            Int                  @id @default(autoincrement())
+    user_id       String               @unique
+    shoppingLists ShoppingListOnUser[]
 }
 
 model ShoppingList {
-    id Int @id @default(autoincrement())
-    name String
-    slug String
-	products products[]
-    shoppingListOnUser ShoppingListOnUser[]
+    id       Int                  @id @default(autoincrement())
+    name     String
+    slug     String
+    users    ShoppingListOnUser[]
+    // products Products[]
 }
 
 model ShoppingListOnUser {
-    user_id  Int @map("userId")
-    user User @relation(fields: [user_id], references: [id])
-    
-    shoppingList_id Int  @map("shoppingListId")
-    shoppingList ShoppingList @relation(fields: [shoppingList_id], references: [id])
+    user_id         Int
+    shoppingList_id Int
+
+    shoppingList    ShoppingList @relation(fields: [shoppingList_id], references: [id])
+    user            User         @relation(fields: [user_id], references: [id])
+
+    role            String
 
     @@id([user_id, shoppingList_id])
 }
 
-model products {
-	id Int @id @unique
-	name String?
-    category String?
-	shipping_list_id Int
-	shoppingList ShoppingList @relation(fields: [shipping_list_id], references: [id]) 
-}
+// model Products {
+//     id               Int          @id @unique
+//     name             String?
+//     category         String?
+//     shipping_list_id Int
+//     shoppingList     ShoppingList @relation(fields: [shipping_list_id], references: [id])
+// }
