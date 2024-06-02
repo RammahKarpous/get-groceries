@@ -1,4 +1,4 @@
-import createShoppingList from "@/actions/prisma/createShoppingList";
+import createShoppingList from "@/actions/createShoppingList";
 import Button from "@/components/ui/Button";
 import ContentWrapper from "@/components/ui/ContentWrapper";
 import TextInput from "@/components/ui/forms/elements/TextInput";

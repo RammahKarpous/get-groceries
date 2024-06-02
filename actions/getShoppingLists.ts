@@ -1,5 +1,8 @@
 "use server";
 
+import { getUserFromPrisma } from "./getUserFromPrisma";
+import prisma from "@/lib/db";
+
 export async function getShoppingLists() {
     const user = await getUserFromPrisma();
 
@@ -17,14 +20,3 @@ export async function getShoppingLists() {
 
     return shoppingLists;
 };
-
-// export async function getUserFromPrisma() {
-//     const user = await currentUser();
-//     const prismaUser = await prisma.user.findUnique({
-//         where: {
-//             user_id: user?.id!
-//         }
-//     })
-
-//     return prismaUser;
-// }

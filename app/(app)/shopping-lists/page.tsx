@@ -1,4 +1,4 @@
-import { getUserFromPrisma } from "@/actions/prisma/getUserFromPrisma";
+import { getUserFromPrisma } from "@/actions/getUserFromPrisma";
 import ContentWrapper from "@/components/ui/ContentWrapper";
 import PlusButton from "@/components/ui/PlusButton";
 import prisma from "@/lib/db";
