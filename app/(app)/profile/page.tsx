@@ -23,7 +23,7 @@ export default async function Profile() {
                 />
 
                 <div className="flex flex-col gap-0">
-                    <p className="font-bold text-xl">{user?.firstName}</p>
+                    <p className="font-bold text-xl">{user?.firstName} {user?.lastName}</p>
                     <p className="text-sm font-light">{user?.emailAddresses[0]?.emailAddress}</p>
                 </div>
 
