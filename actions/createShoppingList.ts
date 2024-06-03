@@ -5,10 +5,10 @@ import { route } from "@/lib/route";
 import { slugify } from "@/utils/slugify";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { getUserFromPrisma } from "./getUserFromPrisma";
+import { getUserFromSupabase } from "./getUserFromPrisma";
 
 export default async function createShoppingList(formData: FormData,) {
-    const user = await getUserFromPrisma();
+    const user = await getUserFromSupabase();
 
     try {
         await prisma.shoppingList.create({
