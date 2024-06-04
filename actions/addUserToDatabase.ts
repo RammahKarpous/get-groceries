@@ -1,7 +1,7 @@
 "use server";
 
 import prisma from "@/lib/db"
-import { User } from "@/types/types"
+import { User } from "@/utils/types"
 
 export const addUserToDatabase = async (user: User) => {
     try {

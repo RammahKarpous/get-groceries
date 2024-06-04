@@ -11,26 +11,47 @@ model User {
     id            Int                  @id @default(autoincrement())
     user_id       String               @unique
     shoppingLists ShoppingListOnUser[]
+    groups        GroupOnUser[]
+}
+
+model Group {
+    id    Int           @id @default(autoincrement())
+    name  String
+    slug  String
+    users GroupOnUser[]
 }
 
 model ShoppingList {
-    id       Int                  @id @default(autoincrement())
-    name     String
-    slug     String
-    users    ShoppingListOnUser[]
+    id    Int                  @id @default(autoincrement())
+    name  String
+    slug  String
+    users ShoppingListOnUser[]
     // products Products[]
 }
 
+// Relationships
 model ShoppingListOnUser {
     user_id         Int
     shoppingList_id Int
 
-    shoppingList    ShoppingList @relation(fields: [shoppingList_id], references: [id])
-    user            User         @relation(fields: [user_id], references: [id])
+    shoppingList ShoppingList @relation(fields: [shoppingList_id], references: [id])
+    user         User         @relation(fields: [user_id], references: [id])
 
-    role            String
+    role String
 
     @@id([user_id, shoppingList_id])
+}
+
+model GroupOnUser {
+    user_id  Int
+    group_id Int
+
+    user  User  @relation(fields: [user_id], references: [id])
+    group Group @relation(fields: [group_id], references: [id])
+
+    role String
+
+    @@id([user_id, group_id])
 }
 
 // model Products {

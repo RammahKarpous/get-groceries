@@ -12,6 +12,7 @@ const config: Config = {
 				body: "#FBFBFB",
                 black: "#1A1818",
                 orange: "#FFA500",
+                green: "#339A33",
                 gray: {
                     light: "#F0F0F0"
                 }

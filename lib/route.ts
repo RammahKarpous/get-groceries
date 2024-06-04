@@ -5,7 +5,8 @@ export const route = {
     settings: "/settings",
 
     // member groups
-    createGroup: "/group/create",
+    groups: "/groups",
+    createGroup: "/groups/create",
 
     // Shopping lists
     shoppingLists: "/shopping-lists",

@@ -5,11 +5,10 @@ import TextInput from "@/components/ui/forms/elements/TextInput";
 import React from "react";
 
 export default async function Create() {
-
     return (
         <ContentWrapper title="Create shoppinglist">
             <form action={createShoppingList} className="flex flex-col gap-3 items-start">
-                <TextInput type="hidden" forAttr="role" value="admin" />
+                <TextInput type="hidden" forAttr="role" value="owner" />
                 <TextInput type="text" forAttr="list-name" label="Shopping list name" />
                 <Button type="primary" text="Add shopping list" />
             </form>

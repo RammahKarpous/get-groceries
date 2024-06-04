@@ -1,7 +1,7 @@
 import React from "react";
 
 // Import types
-import { ButtonProps } from "@/types/types";
+import { ButtonProps } from "@/utils/types";
 
 export default function Button({ text, type }: ButtonProps) {
 

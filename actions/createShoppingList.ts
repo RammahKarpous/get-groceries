@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { getUserFromSupabase } from "./getUserFromPrisma";
 
-export default async function createShoppingList(formData: FormData,) {
+export default async function createShoppingList(formData: FormData) {
     const user = await getUserFromSupabase();
 
     try {
@@ -34,6 +34,6 @@ export default async function createShoppingList(formData: FormData,) {
         return false
     }
 
-    revalidatePath("/shopping-lists");
+    revalidatePath(route.shoppingLists);
     redirect(route.shoppingLists);
 }

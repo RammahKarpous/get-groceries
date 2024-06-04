@@ -1,7 +1,7 @@
 import React from "react";
 
 // Import types
-import { IconProps } from "@/types/types";
+import { IconProps } from "@/utils/types";
 
 export default function UserIcon({ color = "white", width = 24, height = 24, isActive, classes }: IconProps) {
     return (
