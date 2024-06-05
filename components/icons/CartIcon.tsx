@@ -1,5 +1,5 @@
 import React from "react";
-import { IconProps } from "@/utils/types";
+import { IconProps } from "@/lib/types";
 
 export default function CartIcon({color = "white", width = 24, height = 24, isActive, classes}: IconProps) {
     return (

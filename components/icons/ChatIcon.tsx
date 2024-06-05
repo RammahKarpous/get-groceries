@@ -1,7 +1,7 @@
 import React from "react";
 
 // Import types
-import { IconProps } from "@/utils/types";
+import { IconProps } from "@/lib/types";
 
 export default function ChatIcon({ color = "white", width = 24, height = 24, isActive, classes }: IconProps) {
     return (

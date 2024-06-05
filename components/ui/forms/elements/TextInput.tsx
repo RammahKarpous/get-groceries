@@ -1,4 +1,4 @@
-import { TextInputProps } from "@/utils/types";
+import { TextInputProps } from "@/lib/types";
 import React from "react";
 
 export default function TextInput({ forAttr, label, type, value, ...rest }: TextInputProps) {
